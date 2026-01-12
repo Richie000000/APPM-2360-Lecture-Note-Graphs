@@ -94,3 +94,16 @@ plot_direction_field(c(-5, 5), c(-3, 3), ode_1, "y' = y") +
 
 ggsave("solution_curves_1.png")
     
+#### Second direction field ####
+
+ode_2 <- function(v) {
+  t <- v[1]
+  y <- v[2]
+  dt <- t
+  dy <- t**2
+  return(c(dt, dy))
+}
+
+plot_direction_field(c(-5, 5), c(-5, 5), ode_2, "y' = t")
+
+ggsave("direction_field_2.png")
